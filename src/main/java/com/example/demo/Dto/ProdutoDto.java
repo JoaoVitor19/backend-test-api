@@ -8,7 +8,10 @@ public class ProdutoDto {
 
     private Long id;
     private String name;
-    private String valor;
+    private int valor;
+
+    public ProdutoDto() {
+    }
 
     public static ProdutoDto from(Produto produto) {
         ModelMapper modelMapper = new ModelMapper();
@@ -16,7 +19,7 @@ public class ProdutoDto {
         return modelMapper.map(produto, ProdutoDto.class);
     }
 
-    public ProdutoDto(String name, String valor) {
+    public ProdutoDto(String name, int valor) {
         this.name = name;
         this.valor = valor;
     }
@@ -37,11 +40,11 @@ public class ProdutoDto {
         this.name = name;
     }
 
-    public String getValor() {
+    public int getValor() {
         return valor;
     }
 
-    public void setValor(String valor) {
+    public void setValor(int valor) {
         this.valor = valor;
     }
 }

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/produto")
+@RequestMapping( "/produto")
 public class ProdutoController {
 
     @Autowired
@@ -23,7 +23,7 @@ public class ProdutoController {
     }
 
     @PostMapping
-    public ResponseEntity<ProdutoDto> create(@RequestBody @Validated ProdutoDto produtoDto) {
+    public ResponseEntity<ProdutoDto> create(@RequestBody ProdutoDto produtoDto) {
         return ResponseEntity.ok(produtoService.save(produtoDto));
     }
 }

@@ -10,14 +10,13 @@ public class Produto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 25)
     private String name;
 
-    @Column(nullable = false)
     private int valor;
 
     @ManyToOne
-    private Produto produto;
+    private Empresa empresa;
+
 
 
     public Produto(Long id, String name, int valor) {
@@ -26,7 +25,9 @@ public class Produto {
         this.valor = valor;
     }
 
-    public Produto(String name, String valor) {
+    public Produto(String name, int valor) {
+        this.name = name;
+        this.valor = valor;
     }
 
     public Produto() {
